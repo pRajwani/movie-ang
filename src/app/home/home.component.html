@@ -1,12 +1,68 @@
-<mat-card class="card" *ngFor='let movie of topmovies' >
-    <mat-card-header>
-        <mat-card-title>{{movie.title}}</mat-card-title>
-        <mat-card-subtitle>{{movie.vote_average}}</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image height="400" width="200" src='https://image.tmdb.org/t/p/w200{{movie.poster_path}}'>
-    <mat-card-content>
-        <P>
-            {{movie.overview}}
-        </P>
-    </mat-card-content>
-</mat-card>
+<div class="maindiv">
+    <mat-card class="topMovieCard">
+        <div class="heading" fxLayout='row wrap'>
+            <div fxFlex='none'>
+                <mat-card-title>
+                    Top Rated Movies
+                </mat-card-title> 
+            </div>
+            <span fxFlex></span>
+            <mat-card-subtitle class="matCardSubtitle" fxFlex='nogrow'>
+                See All
+            </mat-card-subtitle>
+        </div>
+        <div fxLayout='row' fxLayoutAlign='space-evenly center'>
+            <mat-card class="card" *ngFor='let movie of topmovies' >
+                <img mat-card-image height="300"  src='https://image.tmdb.org/t/p/w200{{movie.poster_path}}'>
+                <mat-card-header class="card-header">
+                    <mat-card-title>{{movie.title}}</mat-card-title>
+                    <mat-card-subtitle class="sub">{{movie.vote_average}}</mat-card-subtitle>
+                </mat-card-header>
+            </mat-card>
+        </div>
+    </mat-card>
+    <mat-card class="topMovieCard">
+        <div class="heading" fxLayout='row wrap'>
+            <div fxFlex='none'>
+                <mat-card-title>
+                    Top Rated TV Shows
+                </mat-card-title> 
+            </div>
+            <span fxFlex></span>
+            <mat-card-subtitle class="matCardSubtitle" fxFlex='nogrow'>
+                See All
+            </mat-card-subtitle>
+        </div>
+        <div fxLayout='row' fxLayoutAlign='space-evenly center'>
+            <mat-card class="card" *ngFor='let movie of topShows' >
+                <img mat-card-image height="300"  src='https://image.tmdb.org/t/p/w200{{movie.poster_path}}'>
+                <mat-card-header class="card-header">
+                    <mat-card-title>{{movie.name}}</mat-card-title>
+                    <mat-card-subtitle class="sub">{{movie.vote_average}}</mat-card-subtitle>
+                </mat-card-header>
+            </mat-card>
+        </div>
+    </mat-card>
+    <mat-card class="topMovieCard">
+        <div class="heading" fxLayout='row wrap'>
+            <div fxFlex='none'>
+                <mat-card-title>
+                    On Air Tv
+                </mat-card-title> 
+            </div>
+            <span fxFlex></span>
+            <mat-card-subtitle class="matCardSubtitle" fxFlex='nogrow'>
+                See All
+            </mat-card-subtitle>
+        </div>
+        <div fxLayout='row' fxLayoutAlign='space-evenly center'>
+            <mat-card class="card" *ngFor='let movie of onAirTv' >
+                <img mat-card-image height="300"  src='https://image.tmdb.org/t/p/w200{{movie.poster_path}}'>
+                <mat-card-header class="card-header">
+                    <mat-card-title>{{movie.name}}</mat-card-title>
+                    <mat-card-subtitle class="sub">{{movie.vote_average}}</mat-card-subtitle>
+                </mat-card-header>
+            </mat-card>
+        </div>
+    </mat-card>
+</div>

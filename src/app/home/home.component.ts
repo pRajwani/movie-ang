@@ -8,20 +8,19 @@ import { HomeService } from "../services/home.service";
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  details:{
-    topMovies:'s',topShows,onAirTv
-  };
 
-  topmovies = []
+  topmovies = [];
+  topShows = [];
+  onAirTv = []
   constructor(private homeService:HomeService) { }
 
   ngOnInit(): void {
     this.homeService.getDetails().subscribe((data)=>{
-      console.log(this.topmovies);
-      for(let i = 0 ; i<3; i++) {
+      for(let i = 0 ; i<5; i++) {
         this.topmovies.push(data.topMovies[i]);
+        this.topShows.push(data.topShows[i]);
+        this.onAirTv.push(data.onAirTv[i]);
       }
-      console.log(this.topmovies)
     })
   }
 
