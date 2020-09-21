@@ -1,0 +1,12 @@
+<mat-card class="card" *ngFor='let movie of topmovies' >
+    <mat-card-header>
+        <mat-card-title>{{movie.title}}</mat-card-title>
+        <mat-card-subtitle>{{movie.vote_average}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image height="400" width="200" src='https://image.tmdb.org/t/p/w200{{movie.poster_path}}'>
+    <mat-card-content>
+        <P>
+            {{movie.overview}}
+        </P>
+    </mat-card-content>
+</mat-card>
